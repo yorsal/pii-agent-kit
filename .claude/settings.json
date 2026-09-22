@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(echo \"exit: $?\")",
+      "Bash(npx tsup *)",
+      "Bash(npx vitest *)"
+    ]
+  }
+}
