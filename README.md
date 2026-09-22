@@ -116,7 +116,11 @@ const kit = buildPiiKit({
 // Plug the remote detector into the engine manually.
 import { DetectionEngine } from 'pii-agent-kit';
 import { RegexDetector } from 'pii-agent-kit';
-kit.detectionEngine; // already built
+
+// `kit.detectionEngine` is already constructed with regex + (optional) ONNX
+// NER. To swap in `ner` (or stack it alongside), rebuild the detector
+// list and pass it to `new DetectionEngine({ detectors })` — adapters
+// receive the engine you hand them in `createLangChainAdapter` etc.
 ```
 
 If the service is unreachable the detector flips `ready=false` and

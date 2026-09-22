@@ -1,0 +1,3 @@
+# Kept as a safety net; with `files` set in package.json, npm ignores
+# this file. The actual exclusion lives in package.json's `files` array
+# as `!dist/*-*.d.ts`.

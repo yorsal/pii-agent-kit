@@ -6,6 +6,7 @@
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "sideEffects": false,
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -29,15 +30,33 @@
     }
   },
   "files": [
-    "dist"
+    "dist",
+    "examples",
+    "README.md",
+    "README.zh-CN.md",
+    "LICENSE",
+    "!dist/*-*.d.ts"
   ],
   "scripts": {
     "build": "tsup",
     "lint": "eslint \"src/**/*.ts\" \"tests/**/*.ts\"",
     "test": "vitest run",
     "test:watch": "vitest",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "release": "./scripts/release.sh",
+    "prepublishOnly": "npm run lint && npm run typecheck && npm test && npm run build"
   },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yorsal/pii-agent-kit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yorsal/pii-agent-kit/issues"
+  },
+  "homepage": "https://github.com/yorsal/pii-agent-kit#readme",
   "dependencies": {
     "@huggingface/transformers": "^3.5.0",
     "json-rules-engine": "^7.3.1",
