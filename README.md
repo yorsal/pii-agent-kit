@@ -7,6 +7,8 @@ tamper-evident audit receipts; reversible tokenization via a session-scoped
 vault. Adapters for LangChain.js, Vercel AI SDK, MCP and OpenAI SDK are
 included.
 
+> [简体中文版](./README.zh-CN.md)
+
 ## Reuse vs. own
 
 | Concern | Reused library | Notes |
